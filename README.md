@@ -17,7 +17,7 @@ Bons estudos 😉
 
 # Meu projeto
 
-Decidi criar minha própria aplicação API-CRUD, não replicar o exemplo dado em aula, melhorar inventário de produtos que criei para o desafio anterior aplicando tudo o que foi sugerido em aula para uma aplicação mais robusta, documentada com UML e Swagger, publicada na nuvem usando Railway e PostgreSQL.
+Decidi criar minha própria aplicação API, não replicar o exemplo dado em aula, melhorar inventário de produtos que criei para o desafio anterior aplicando tudo o que foi sugerido em aula para uma aplicação mais robusta, documentada com UML e Swagger, publicada na nuvem usando Railway e PostgreSQL.
 Se precisar de mais detalhes em qualquer uma das etapas, sinta-se à vontade para perguntar!
 
 ## Diagrama de classes 
