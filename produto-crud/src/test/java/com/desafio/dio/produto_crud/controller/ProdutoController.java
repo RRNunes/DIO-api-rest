@@ -40,7 +40,7 @@ public class ProdutoController {
     @PutMapping("/{id}")
     @Operation(summary = "Atualizar um produto existente")
     public ResponseEntity<Produto> updateProduto(@PathVariable Long id, @RequestBody Produto produto) {
-        if (produtoService.findById(id).isEmpty()) {
+        if (!produtoService.findById(id).isPresent()) {
             throw new ProdutoNotFoundException(id);
         }
         produto.setId(id);
