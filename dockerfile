@@ -5,7 +5,7 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copiar o arquivo JAR da aplicação para o contêiner
-COPY target/produto-crud-0.0.1-SNAPSHOT.jar app.jar
+COPY produto-crud/target/produto-crud-0.0.1-SNAPSHOT.jar app.jar
 
 # Expor a porta que a aplicação vai usar
 EXPOSE 8080
