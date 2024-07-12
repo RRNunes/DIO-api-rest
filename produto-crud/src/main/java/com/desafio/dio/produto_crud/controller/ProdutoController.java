@@ -3,6 +3,7 @@ package com.desafio.dio.produto_crud.controller;
 import com.desafio.dio.produto_crud.exception.ProdutoNotFoundException;
 import com.desafio.dio.produto_crud.model.Produto;
 import com.desafio.dio.produto_crud.service.ProdutoService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
