@@ -27,7 +27,7 @@ public class ProdutoService {
     }
 
     public Produto save(Produto produto) {
-        long count = produtoRepository.countProdutos();
+        long count = produtoRepository.countProduto();
         if (count >= MAX_PRODUTOS) {
             throw new ProdutoLimitExceededException("Limite máximo de produtos alcançado. Por favor, delete produtos para inserir novos.");
         }
