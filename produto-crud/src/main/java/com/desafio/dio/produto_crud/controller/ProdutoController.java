@@ -1,5 +1,6 @@
 package com.desafio.dio.produto_crud.controller;
 
+import com.desafio.dio.produto_crud.exception.ProdutoLimitExceededException;
 import com.desafio.dio.produto_crud.exception.ProdutoNotFoundException;
 import com.desafio.dio.produto_crud.model.Produto;
 import com.desafio.dio.produto_crud.service.ProdutoService;
@@ -34,8 +35,13 @@ public class ProdutoController {
 
     @PostMapping
     @Operation(summary = "Criar um novo produto")
-    public Produto createProduto(@RequestBody Produto produto) {
-        return produtoService.save(produto);
+    public ResponseEntity<Produto> createProduto(@RequestBody Produto produto) {
+        try {
+            Produto createdProduto = produtoService.save(produto);
+            return ResponseEntity.ok(createdProduto);
+        } catch (ProdutoLimitExceededException ex) {
+            return ResponseEntity.badRequest().body(null);
+        }
     }
 
     @PutMapping("/{id}")
@@ -53,5 +59,10 @@ public class ProdutoController {
     public ResponseEntity<Void> deleteProduto(@PathVariable Long id) {
         produtoService.deleteById(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @ExceptionHandler(ProdutoLimitExceededException.class)
+    public ResponseEntity<String> handleProdutoLimitExceededException(ProdutoLimitExceededException ex) {
+        return ResponseEntity.badRequest().body(ex.getMessage());
     }
 }
