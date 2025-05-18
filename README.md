@@ -23,6 +23,8 @@ Se precisar de mais detalhes em qualquer uma das etapas, sinta-se à vontade par
 #### Deploy:
 https://dio-api-rest.up.railway.app/swagger-ui/index.html
 
+![Texto Alternativo](1721674207596.jpg)
+
 ## Diagrama de classes 
 
 ````  mermaid
